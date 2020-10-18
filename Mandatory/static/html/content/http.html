@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP</title>
+</head>
+<body>
+
+    
+    <!--head fragment-->
+    <div id="header-fragment"></div>
+
+    <!--Navbar fragment-->
+    <div id="navbar-fragment"></div>
+
+    <div class="content-wrap">
+        
+        <div class="jumbotron"> 
+    
+            <div class="container">
+              <h2 class="display-4">HTTP</h2>
+                <p class="lead"> 
+                    Short introduction to HTTP.<br>
+                </p>
+                <hr class="my-4">
+                <p>HTTP stands for <b>H</b>yper <b>T</b>ext <b>T</b>ransfer <b>P</b>rotocol.
+                   The HTTP protocol is used across countless web pages on the World Wide Web.
+                   The purpose of HTTP is to achieve communication between server & client on the WWW.
+                   This is done through HTTP request methods.<br><br>
+
+                   HTTP is stateless. This means that each time a connection is established, there are no memories of past communication.<br>
+                   This is also why, sites like Facebook uses Cookies (to remember your login & log your credentials - information).  
+                </p>
+
+                <img src="../http-request.png" class="img-thumbnail rounded mx-auto d-block" style="width: 600px; height: 180px;">
+
+                <h5>HTTP Request methods</h5>
+                <p>
+                    <ul style="list-style-type:none;">
+                        <li>GET method</li>
+                            <ul style="list-style-type:none;">
+                                <li>
+                                    The GET method is used everytime a webpage is loaded. The client (often browsers) send a GET request to the website (web-server) in which the client asks for the relevant data in order to load a specific website.<br>
+                                    It should be noted that the client sends a request for a <i>representation</i> of the resource. The GET method only <i>retrieves</i> data and is also defined as a safe method.
+                                </li>
+                            </ul>
+                        <li>PUT methods</li>
+                            <ul style="list-style-type:none;">
+                                <li>
+                                    The PUT method is used to update specific resource / resources. If the request points towards an existing resource, then that resource should be updated with the new data.<br>
+                                    If the request points at a non-existing resource, then it will create the resource. The PUT method is defined as idempotent. 
+                                </li>
+                            </ul>
+                        <li>POST method</li>
+                            <ul style="list-style-type:none;">
+                                <li>
+                                    The POST method is used to send. When logging into a website, the client (browser) sends a POST request as the user has filled out the login formular. Like the PUT method, the POST method is also considered as idempotent.
+                                </li>
+                            </ul> 
+                        <li>DELETE method</li>
+                            <ul>
+                                <li>
+                                    As the name hints, the DELETE request will simply delete the specified resource.
+                                </li>
+                            </ul>
+                    </ul>
+                </p>
+                <p>Besides the ones listed above, there are also: <i>HEAD, OPTIONS, TRACE, CONNECT & PATCH</i>, which we won't cover as they are not relevant for us.</p>
+
+                <h6>Scenario:</h6>
+                <p>
+                    1. User searches for an article on [Wikipedia.com](http://wikipedia.com). 
+                    2. The browser sends a GET request to the Wikipedia Web-server, which will - if it exists - find the correct response in the correct format. Often just HTML file & pictures. 
+                    3. The Web-server returns the correct files and information, which is called a HTTP Response
+                    4. The browser interprets and displays the response to the Client.
+                </p>
+                
+
+                <h5>HTTP Status Codes</h5>
+                <p>The status codes are the response from the server. One of the most recognisable status code is <b>404</b>.<br>
+                    The status codes:</p>
+                <ul style="list-style-type:none;">
+                    <li>100 - 199 | Informal Response</li>
+                    <li>200 - 299 | Succesful Response</li>
+                    <li>300 - 399 | Redirects</li>
+                    <li>400 - 499 | Client Errors</li>
+                    <li>500 - 599 | Server Errors</li>
+                </ul>
+
+        <hr>
+
+    </div>
+    
+
+
+
+    
+       <!--Scripts-->
+    <div id="footer-fragment"></div>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("#navbar-fragment").load("../html/fragment/navbar.html")
+            $("#header-fragment").load("../html/fragment/header.html")
+            $("#footer-fragment").load("../html/fragment/footer.html")
+        })
+    </script>
+    
+</body>
+</html>

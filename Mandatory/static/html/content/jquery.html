@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+</head>
+<body>
+    <div id="navbar-fragment"></div>
+    <div id="header-fragment"></div>
+
+
+    
+ 
+    <div class="content-wrap">
+        
+        <div class="jumbotron"> 
+    
+            <div class="container">
+              <h2 class="display-4">JQuery</h2>
+                <p class="lead"> 
+                    Short introduction to Jquery.</p>
+                <hr class="my-4">
+                <p>The purpose of JQuery is to simplify coding with Javascript. It is basically a an enormous Javascript library with code for HTML, CSS, AJAX etc.<br>
+                    There are of course other Javascript libraries, but JQuery is by far one of the popular ones. JQuery is also cross-platform compatible and supports various browsers.
+
+                </p>
+
+                <h5>Implementation</h5>
+                <p>In order to use JQuery in our code we must first implement it.
+                JQuery is applied by implementing the JQuery script, which has multiple providers. One of these providers are <a href="https://developers.google.com/speed/libraries/#jquery">Google</a>. <br>
+                Once the script is acquired, it is placed in the bottom of the body tag and then JQuery should work. <br>
+                To test this, you can write a JQuery script and see if it appears as intended: <br>
+                
+                <code>
+<pre>
+    windows.onload = function() = {
+        if(window.jQuery) {
+            alert('Works')
+        } else {
+            alert('Doesn't work')
+        }
+    }
+            </pre>
+                </code>
+                
+                <img src="../jqueryTest.png" class="img-thumbnail " style="width: 300px; height: 140px;">
+                
+            
+            </p>
+
+            <p>Another way of checking if JQuery is applied is to write the following inside the Javascript file:</p>
+            <code>
+<pre>
+    console.log($)
+</pre>
+            </code>
+
+            <p>Run the application and check the browser engine console. If the output looks like the following, then it is imported successfully.</p>
+            <code>
+                <pre>
+    S(e, t)
+    Animation: function ft(o, e, t)
+    Callbacks: function Callbacks(r)
+    Deferred: function Deferred(e)
+    Event: function Event(e, t)
+    Tween: function et(e, t, n, r, i)
+    _data: function _data(e, t, n)
+    _evalUrl: function _evalUrl(e, t, n)
+    _queueHooks: function _queueHooks(e, t)
+    _removeData: function _removeData(e, t)
+    hasData: function hasData(e)
+    holdReady: function holdReady(e)
+    htmlPrefilter: function htmlPrefilter(e)
+    inArray: function inArray(e, t, n)
+    isArray: function isArray()
+
+    etc ... 
+                </pre>
+            </code>
+
+               
+        <hr>
+    </div>
+
+    <div id="footerfragment"></div>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#navbar-fragment").load("../html/fragment/navbar.html");
+                $("#header-fragment").load("../html/fragment/header.html");
+                $("#footer-fragment").load("../html/fragment/footer.html");
+
+        });
+    </script>
+</body>
+</html>

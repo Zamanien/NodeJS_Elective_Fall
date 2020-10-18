@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceX | Launches 2020</title>
+</head>
+<body>
+
+    
+    <!--head fragment-->
+    <div id="header-fragment"></div>
+
+    <!--Navbar fragment-->
+    <div id="navbar-fragment"></div>
+
+
+    <div class="content-wrap">
+        
+        <div class="jumbotron"> 
+            <div class="container">
+            
+              <h2 class="display-4">SpaceX | Launches</h2>
+                <p class="lead"> 
+                    
+                    <h4>SpaceX Latest & Upcoming Missions</h4>
+                    <hr>
+                    <p>This page provides information about the latest & upcoming SpaceX missions. The data is retrieved the public API provided by SpaceX.</p>
+                    <h5>Latest Launch</h5>
+                    
+                    <table class="table">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">Flight Number</th>
+                            <th scope="col">Rocket</th>
+                            <th scope="col">Mission</th>
+                            <th scope="col">Launch Site</th>
+                            <th scope="col">Launch Date - Local</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row"><ul style="padding-inline-start: 0px;" id="flight_number"></ul></th>
+                            <td><ul id="rocket_name" style="padding-inline-start: 0px;"></ul></td>
+                            <td><ul id="mission_name" style="padding-inline-start: 0px;"></td>
+                            <td><ul id="launch_site" style="padding-inline-start: 0px;"></td>
+                            <td><ul id="launch_date" style="padding-inline-start: 0px;"></td>
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+                    
+                      <h5 style="text-align: center;">The Launch</h5>
+                      <p id="c1"></p>
+                      
+
+                      <br><hr><br>
+
+                      <h5>Next Launch</h5>
+                      <table class="table">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">Flight Number</th>
+                            <th scope="col">Rocket</th>
+                            <th scope="col">Mission</th>
+                            <th scope="col">Launch Site</th>
+                            <th scope="col">Launch Date - Local</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row"><ul style="padding-inline-start: 0px;" id="flight_numbers"></ul></th>
+                            <td><ul id="rocket_names" style="padding-inline-start: 0px;"></ul></td>
+                            <td><ul id="mission_names" style="padding-inline-start: 0px;"></td>
+                            <td><ul id="launch_sites" style="padding-inline-start: 0px;"></td>
+                            <td><ul id="launch_dates" style="padding-inline-start: 0px;"></td>
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+                  
+
+                </div>
+
+            </div>
+
+
+
+            <div id="footer-fragment"></div>
+            <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+            <script>
+                $(document).ready(function() {
+                    $("#navbar-fragment").load("../html/fragment/navbar.html")
+                    $("#header-fragment").load("../html/fragment/header.html")
+                    $("#footer-fragment").load("../html/fragment/footer.html")
+                });
+            </script>
+
+                <!-- Ideally, these JQuery scripts should be in their own javascript files-->
+                <!-- Script that fetches the latest SpaceX launch.-->
+            <script>
+                $(document).ready(function() {    
+                    async function spaceapi(){
+                        const res = await fetch('https://api.spacexdata.com/v3/launches/latest'); 
+                        const json = await res.json();
+                        const video_id = json.links.youtube_id;
+
+                        $('#flight_number').text(json.flight_number);
+                        $('#rocket_name').text(json.rocket.rocket_name);
+                        $('#mission_name').text(json.mission_name);
+                        $('#launch_date').text(json.launch_date_local);
+                        $('#launch_site').text(json.launch_site.site_name_long);
+                        $('#c1').append(`<iframe width="720" height="480" class="embed-responsive-item rounded mx-auto d-block" src="https://www.youtube.com/embed/${video_id}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`);
+
+                        
+                    }
+    
+                spaceapi(); 
+
+                });
+            </script>
+
+            <!--Script that returns the upcoming spaceX launch-->
+            <script>
+                $(document).ready(function() {    
+                    async function spaceapi(){
+                        const res = await fetch('https://api.spacexdata.com/v3/launches/next'); 
+                        const json = await res.json();
+                        const video_id = json.links.youtube_id;
+
+                        $('#flight_numbers').text(json.flight_number);
+                        $('#rocket_names').text(json.rocket.rocket_name);
+                        $('#mission_names').text(json.mission_name);
+                        $('#launch_dates').text(json.launch_date_local);
+                        $('#launch_sites').text(json.launch_site.site_name_long);
+                    }
+
+                spaceapi(); 
+
+                });
+
+                
+
+
+            </script>
+           
+            
+
+
+          
+         </body>
+         </html>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Index</title>
+
+
+</head>
+<body>
+    <div id="header-fragment"></div>
+
+    <!--The navigation bar - Loaded from 'navbar.html'-->
+    <div id="navbar-fragment"></div>
+
+    <div class="content-wrap">
+        
+        <div class="jumbotron"> 
+    
+            <div class="container">
+              <h2 class="display-4">Node Mandatory Handin #1</h2>
+                <p class="lead">This site contains an overview of things learned in the NodeJS elective 2020</p>
+                <hr class="my-4">
+                <h5>Why?</h5><br>
+                <p>The motivation behind this website is Mandatory Assignment one in the NodeJS elective 2020</p><br>
+                <h5>Requirements: </h5><br>
+
+                <p>- Serve the pages with Express<br><br>
+                   - Split up the documentation in segments rather than one long page<br><br>
+                   - Use jQuery to make it a nicer user experience<br><br>
+                   - Should contain terminal commands<br><br>
+                   - Should contain code snippets<br><br>
+                   - Should contain all the tools we’ve used and explain them<br><br>
+                   - Should cover theory that we’ve touched upon<br><br>
+
+                <h5>Bonus requirements</h6><br>
+
+                <p>- Research something you want to understand better</p> 
+                   - Learn something new</p>
+    
+            </div>
+            
+        </div>
+   
+ 
+
+    <div id="footer-fragment"></div>
+    <!--JQuery To load fragment scripts (amongst other)-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    
+    <!-- Function used to call on Navigation - For avoiding Boilerplate code-->
+    <script>
+        $(document).ready(function() {
+            $("#navbar-fragment").load("../html/fragment/navbar.html");
+            $("#header-fragment").load("../html/fragment/header.html");
+            $("#footer-fragment").load("../html/fragment/footer.html");
+        })
+    </script>
+
+
+</body>
+</html>

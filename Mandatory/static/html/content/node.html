@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node</title>
+</head>
+<body>
+    <div id="navbar-fragment"></div>
+    <div id="header-fragment"></div>
+
+
+    <div class="content-wrap">
+        
+        <div class="jumbotron"> 
+    
+            <div class="container">
+              <h2 class="display-4">NodeJS Intro</h2>
+                <p class="lead">It is always good to explain what exactly we are dealing with. So here is a short introduction:</p>
+                <hr class="my-4">
+                <h4>NodeJS</h4> 
+                <p>NodeJS is basically a way of running JavaScript code. Before Node, JavaScript could only be applied to web browsers. By integrating a JavaScript engine (Chrome V8) with C++, the JavaScript code can now be applied outside browsers.
+                    Node is ideal for building highly scalable, data-intensive backend & real-time apps. 
+                    Being great for prototyping & agile gives Node an advantage over the alternatives, such as Django. Node is fast & used world-wide. 
+                    Source code will also be more clean & consistent, as there is JavaScript  in both on the frontend & backend.
+                </p>
+                <br>
+                <h4>Node is a runtime environment of executing JavaScript code</h4>
+                <p>Not a programming language. Neither a Framework. </p> 
+
+                <br>
+                <p>
+                    <h5 class="display-5">What can you do with NodeJS?</h5>
+                        <ul>
+                            <li>API (RestAPI)</li>
+                            <li>Websites</li>
+                            <li>Standalone software</li>
+                            <li>Servers</li>
+                            <li>Comandlines</li>
+                            <li>Scripts (timed scripts, etc)</li>
+                            <li>Interfaces</li>
+                            
+                        </ul>
+                </p>
+    
+            </div>
+            
+        </div>
+
+
+    <div id="footer-fragment"></div>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#navbar-fragment").load("../html/fragment/navbar.html");
+            $("#header-fragment").load("../html/fragment/header.html");
+            $("#footer-fragment").load("../html/fragment/footer.html");
+
+        }); 
+    </script>
+</body>
+</html>

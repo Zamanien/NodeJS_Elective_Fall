@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="header-fragment"></div>
+    <div id="navbar-fragment"></div>
+    
+
+    <div class="content-wrap">
+        
+        <div class="jumbotron"> 
+    
+            <div class="container">
+              <h2 class="display-4">NPM</h2>
+                <p class="lead"> 
+                    Short introduction to NPM and Frameworks, Packages and Modules.</p>
+                <hr class="my-4">
+
+                <p>NPM stands for <b>N</b>ode <b>P</b>ackage <b>M</b>anager. NPM is a tool used to borrow modules, packages and frameworks in NodeJS. Currently, the most used NodeJS framework is Express. NPM is open source & flexible but it is also reliable, which is why it is are used by big companies, such as Reddit & Stack.<br>
+                There are basically three parts to NPM: <br>
+                <ul style="list-style-type:none;">
+                    <li>The Website
+                        <ul style="list-style-type:none;">
+                            <li>
+                                The NPM website can be used to discover new or find exisiting packages. Let's say that you search for <a href="https://www.npmjs.com/package/express">Express</a> on the NPM website.<br>
+                                The site will provide many neat things about Express, such as version, documentation, examples, dependencies etc.<br>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><br>The Registry
+                        <ul style="list-style-type:none;">
+                            <li>
+                                The NPM Registry is a database that consists of Javascript code. The code is ready to be downloaded through the NPM client.<br>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><br>The Command Line
+                        <ul style="list-style-type:none;">
+                            <li>
+                                The NPM Command Line comes with NodeJS when it's installed on a device. <br>
+                                This is where the developer runs the NPM commands to download & install packages from the NPM Registry. Some of the NPM commands can be seen in the table below.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </p>
+                <h5>NPM Commands:</h5>
+                <table class="table table-bordered table-striped">
+                    <thead class="thread">
+                        <tr>
+                            <th>NPM Init</th>
+                            <th>NPM Install</th>
+                            <th>NPM Start</th>
+                        </tr>
+                    </thead>
+                    <tbody> 
+                        <td>
+                            <div class="card" style="width: 22rem;">
+                                <div class="card-body">
+                                  <p class="card-text">
+                                      The npm init command will initialize a package.json file in the profect folder. This is typically the first step before installing Node Dependencies. The package.json file will look like the following:<br>
+                                      <ul style="list-style-type:none;">
+                                        <li>"name": "nodeProject",</li>
+                                        <li>"version": "0.0.1",</li>
+                                        <li>"description": "Project description",</li>
+                                        <li>"main": "app.js", //Main js file. Usually called 'app.js' due to convention.</li>
+                                        <li>"author": "My Name",</li>
+                                        <li>"license": "ISC" //License of your choosing</li>
+                                        <li> "dependencies": {</li>
+                                        <li>"express": "^4.17.1"</li>
+                                        <li>}</li>
+                                    </ul>
+                                    </p>
+                                </div>
+                              </div>
+                        </td>
+                        <td>
+                            <div> 
+                            <div class="card" style="width: 30rem;">
+                                <div class="card-body">
+                                  <p class="card-text"> 
+                                    Npm install | with arguemnts:<br>
+                                    Running the 'npm install (argument)' or 'npm i (argument)' will download the package and relevant dependencies, which are saved to the - already existing - 'node_modules' folder. 
+                                    Npm install with arguments will not create a new 'node_modules'. <br><br>
+                                
+                                    Npm install | w/o flags:<br>
+                                    Running the 'npm install' or 'npm i' will download the modules, which are defined in the 'package.json' file. Specifically in the depenency section. 
+                                </p>
+                                </div>
+                              </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="card"  style="width: 18rem;">
+                                <div class="card-body">
+                                  <p class="card-text">
+                                    <h4></h4>
+                                    Running 'npm start "scriptName"' will launch the script. 
+                                </p>
+                                </div>
+
+                                
+                            </div>
+                        </td>
+                    </tbody>
+                    
+
+                </table>
+
+            <hr class="my-4">
+
+            <h4 class="display-5">Packages vs. Modules</h4>
+            <p>
+                What is the difference between a package and a module in NodeJS?:<br><br>
+                <b>Packages</b> are one or more modules packaged together.<br>
+                <b>Modules</b> are libraries for NodeJS.<br><br>
+
+                Example: 
+                <code>
+<pre>
+Animal         --> Name of package
+    - Dog       ->
+    - Chicken   ->  Modules inside Package: Animal  
+    - Horse     ->
+</pre>
+                </code>
+
+                <br><p>Every file in a Node application is considered a package and should have a 'package.json' file.</p>
+            
+
+        <hr><br>
+
+        <h4 class="display-5">Some Frameworks</h4>
+            <p class="lead"> 
+        
+              <h5 class="display-5">Express</h5>
+                <p>Express is a Nodejs framework often used for web applications & provides a lot of neat features.</p>
+
+        <ul style="list-style-type:none;">
+            <h5>Installation</h5>
+            <p>
+                Before Express can be installed, NodeJS needs to be installed on the device. One way to install Express is to use NPM.<br>
+                1. Open the terminal in the editor.<br>
+                2. Write: <pre><code>  npm i express</code></pre> 
+
+                <h5>Webserver example with Express:</h5>
+                1. Create an 'app.js' file in the directory (app.js is used by convention, but can be called anything)<br>
+                2. Type the following inside the 'app.js' file: 
+                <pre>
+                    <code>
+  const express = require('express');
+  const app = express();
+  const port = process.env.PORT || 9999;
+
+    ...
+
+  app.listen(port, (error) => {
+        if(error) {
+            console.log("Port Error");
+        }
+      console.log("up and running on port:", Number(port);   
+    });
+                    </code>
+                </pre>
+
+        
+
+                3. Lastly, launch the app.js file: <br><br><pre><code>  node app.js</code></pre>
+            </p>
+        </ul>
+            <p>By running the app.js file with node, the web server will launch on port 9999. The site can be accessed through: localhost:3000 but nothing will be displayed because we have not asked the application to respond with anything specific yet.<br>
+                The application can in this example return an HTML file.
+                This can be done by routing some endpoints in the 'app.js' file. These endpoints are provided by Express.<br> <br>
+                <ul style="list-style-type:none;">
+                Syntax:</p>
+                <pre>
+<code>
+    app.HTTP-method("/URL-Path", (Handler)) {
+        return respone + "File-Path"
+    }
+</code>
+                </pre>
+                <p>Example:</p>
+                <pre>
+    <code>
+    app.get("/npm", (req, res) => {
+        res.sendFile(__dirname + "/static/html/content/npm.html");
+    });                        
+    </code>
+                </pre>
+            </ul>
+                <p>The example above is actually how the endpoint for this specific page looks like.<br>
+                We set the URL-path to: '/npm' and we also set the reponse to be the '../npm.html' file, so that our web-server responds with a representation of that specific resource when a client makes a GET-request to that URL.<br>
+                Endpoints are our application's URI's.</p>
+                <p>Dependencies will also appear on the package.json file like the following</p>
+                <ul style="list-style-type:none;"><img src="../nodeDependencies.png" class="img-thumbnail " style="width: 300px; height: 140px;"><br><br></ul>            
+                <p>Express does of course provide a lot of more feautures than explained in here. But this covered the very basics of how to install Express, setup a web-server and serve a HTML file.</p><br>
+                    
+<hr class="my-4">
+
+    <h5 class="display-5">Nodemon</h5>
+        <p>Nodemon is a NodeJS tool & can be downloaded through the NPM registry (or through cloning with git). It is an extreme useful tool when it comes to web development as it automatically restarts the Node application everytime a change is made in the backend.<br>
+        This may not sound impressive but imagine manually restarting your application everytime you make a change. By running the application with Nodemon, the other issue is seen as a thing of the past.</p>
+        
+        <h5>Install & Use</h5>
+        <p>Nodemon is installed like many other tools in NodeJS.</p>
+        <ul style="list-style-type:none;">
+            <li>
+            1. Open the terminal.
+            </li>
+            <li>
+                2. Type: 'npm i nodemon'
+                <ul style="list-style-type:none;">
+                    <li>
+                        It is possible to add the -g flag, which will install the tool in the global scope.</li>
+                </ul>
+            </li>
+            <li>
+                3. Now you have installed needed packages & dependencies.<br>
+                You can simply type the following in your terminal to continously run your application: 'nodemon app.js'.<br>
+                The result will look something similar to the picture below: 
+                <br><br><img src="../nodemon.png" class="img-thumbnail " style="width: 500px; height: 180px;"></img>
+            </li>
+
+            <br><p>To exit Nodemon, simply press the 'Ctrl' + 'c' keys at the same time.</p>
+        </ul>
+
+
+
+
+<hr>       
+               
+
+                    
+
+        
+             
+    </div>
+
+
+
+    
+    <div id="footer-fragment"></div>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#navbar-fragment").load("../html/fragment/navbar.html");
+            $("#header-fragment").load("../html/fragment/header.html");
+            $("#footer-fragment").load("../html/fragment/footer.html");
+        }); 
+    </script>
+</body>
+</html>

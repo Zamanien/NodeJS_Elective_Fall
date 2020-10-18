@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body>
+    <div id="navbar-fragment"></div>
+    <div id="header-fragment"></div>
+
+
+    <h3>API test</h3>
+
+
+    <div id="footerfragment"></div>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#navbar-fragment").load("../html/fragment/navbar.html");
+            $("#header-fragment").load("../html/fragment/header.html");
+            $("#footer-fragment").load("../html/fragment/footer.html");
+        });
+    </script>
+</body>
+</html>

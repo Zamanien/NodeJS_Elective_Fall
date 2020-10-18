@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+    <div id="navbar-fragment"></div>
+    <div id="header-fragment"></div>
+
+     
+    <div class="content-wrap">
+        
+        <div class="jumbotron"> 
+
+            <div class="card bg-light mb-3" style="width: 15rem; float: left; margin-top: 100px;">
+                <div class="card-body">
+                  <h5 class="card-title"><u>Pro Tip!</u></h5>
+                  <p class="card-text">Variables & functions in the scope of an Object are named 'properties' & 'methods'. <br><br>
+                     In contrast, they remain named 'variable' & 'function' in the global scope.</p>
+                </div>
+              </div>
+    
+            <div class="container">
+              <h2 class="display-4">Javascript</h2>
+                    <p class="lead">Short introduction to basic Javascript functions, methods and objects</p>
+                    
+                <hr class="my-4">
+                <h3 class="display-5">Functions</h3>
+                <p>The definition of a function is that is is a part of a program made to perform a specific task.</p>
+                <p>Javascript Functions supports many variations. This introduction will only present some syntaxes & simple examples.<br>
+                    Some of the Javascript variations are: </p>
+
+                    <ul style="list-style-type:none;">
+                        <li>- Anonymous functons</li>
+                        <li>- Inner functions</li>
+                        <li>- Callback functions</li> 
+                        <li>- Etc.</p> 
+                    </ul>
+                
+                <br> 
+                <h6>Syntax:</h6>
+                <p> When declaring functions, the 'function' keyword is used and followed by a name.</p>
+                
+            <pre>
+                <code>
+    function anyName(parameters) {
+        statements;
+    };
+                </code>
+            </pre>
+                <p>Using an Arrow Function Expression is a more efficient way to write function expressions. An advantages is shorter syntax: </p>
+            <pre>
+        <code class="Javascript">
+    function(parameter) => {
+        statement; 
+    });
+        </code>
+            </pre>
+
+                <p>A simple example of a Javascript Arrow Function: </p>
+            <pre>
+            <code>
+    function someEquation(a1, a2, a3){
+        return a1 * a3 - a2;
+    }
+        </code>
+            </pre>
+
+                <p>The same example but with Arrow Function: </p>
+            <pre>
+    <code>
+    someEquation (a1, a2, a3) => {
+        return a1 * a3 - a2; 
+    });
+    </code>
+            </pre>
+        
+            <h3 class="display-5">Variables</h3>
+            <p class="lead"> 
+                Short introduction to Javascript Variables.</p>
+            <hr class="my-4">
+            <p>In Javascript & all other programming languages, variables are basically containers used to store values inside. These containers can then be refered to by the name given to them in the declaration process.</p>
+            <pre>
+<code>
+const brandName = "Jaguar";         //const is a constant variable 
+var carModel = "MkII 3.8 Litre";    //var is a Globalscope variable
+let manufacturingDate = "1959";     //let is a BlockScope variable 
+</code>
+            </pre>
+
+        <p>If you wish to create variables, you must declare a variable & then assign it a value. Unassigned variables are by default initialized with undefined.  <br>
+            In the example above, there are declared three variables with different values. In order to create variables, you must use one of the three keywords: const, var or let.</p>
+    <h5>Thumb-rule of Javascript keywords:</h6>
+        <ul style="list-style-type:none;">
+            <li>Const:</li>
+                <ul>
+                    <li>Use const keyword if the variable is to be changed</li>
+                </ul>
+            <li>Let:</li>
+                <ul>
+                    <li>Use let keyword if the variable is not to be changed</li>
+                </ul>
+            <li>Var:</li>
+                <ul>
+                    <li>Use var keyword if global scope is needed. (If possible - do avoid it)</li>
+                </ul>
+        </ul>
+
+<h4>Scope</h4>
+    <p>Scopes defines where in the code a certain variables & functions are accesible inside the program. There are two kinds of scopes in Javascript:</p>
+        <p>Global Scope: <br>
+            A variable is in the global scope if it appears outside a function. In other words, the particalar variable is accesible <i>outside</i> the functions.
+        </p>
+        <p>Local Scope: <br>
+            A variable is in the local scope if it appears inside a function. In other words, the particular variable is only accesible <i>inside</i> that function.
+        </p>
+
+<h5> Hoisting </h5>
+    <p>
+        Hoising is when Javascript reads the code, it will then move all function and variable declaration to the top of the current scope. In other words, it hoists/rises the code.<br> 
+         Cosnider the following example: </p>
+        <pre>
+<code> 
+console.log('brand: ', brand)
+console.log('type: ', type)
+
+var brand = 'MTB'
+var type = 'Mountain Bike'
+}
+</code>
+        </pre>
+
+        <p>Due to hoisting, the code will actually run & and the console.log will give us 'undefined' as expected.<br>
+            The program in the interpreter after hoisting:</p> 
+        <pre>
+<code> 
+var brand = 'MTB';
+var type = 'Mountain Bike';
+
+console.log('brand: ', brand) //undefined
+console.log('type: ', type)   //Undefined
+</code>
+        </pre>
+
+<p>Another simple example of how hoisting is interpreted:</p>
+<img src="../variablesHoisted.png" class="img-thumbnail" alt="..."></img>
+
+<br><br><br>
+
+<h4>Data Types</h4>
+
+    <p>There are many different kinds of data types in Javascript. Primitive Data Types are called 'primitive' because they are stored by value.<br>
+        Here are some Primitive Data Types:</p>
+        <ul style="list-style-type:none;">
+            <li>String</li>
+                <ul>
+                    <li>Text</li>
+                </ul>
+            <li>Number</li>
+                <ul> 
+                    <li>Both float and int values</li>
+                </ul>
+            <li>BigInt</li>
+                <ul>
+                    <li>Whole numbers between -2^53 & 2^53</li>
+                </ul>
+            <li>Boolean</li>
+                <ul>
+                    <li>True & False</li>
+                </ul>
+            <li>Undefined</li>
+                <ul>
+                    <li>Unassigned value</li>
+                </ul>
+            <li>Null</li>
+                <ul>
+                    <li>A special value that represents 'nothing'</li>
+                </ul>
+            <li>Symbol</li>
+                <ul>
+                    <li>Unique identifier</li>
+                </ul>
+        </ul>
+
+
+    <p>Unlike primitive data types, the complex data types are stored by reference. <br>
+        Some of the non-primitive data types of Javascript:</p>
+        <ul style="list-style-type:none;">
+            <li>Object</li>
+                <ul>
+                    <li>Collection of data and more complex entities</li>
+                </ul>
+            <li>Arrays</li>
+                <ul>
+                    <li>Group of values</li>
+                </ul>
+            <li>RegEx</li>
+                <ul>
+                    <li>Regular Expressions</li>
+                </ul>
+        </ul>
+
+        <hr>
+
+                <h4 class="display-5">Objects</h4>
+                    <p class="lead">Short introduction to Javascript Objects.</p>
+                        <p>In contrast to variables, ojects are used to store keyed collections of different data types (instead of just one).<br>
+                        There are a couple of ways of creating objects in Javascript.<br>
+                        The syntax looks like:</p>
+    
+                    <pre>
+            <code>
+    let nameOfObejct = {
+        key: value, 
+        key: value
+    }
+    nameOfObejct.key; 
+            </code>
+                    </pre>
+    <p>An example:</p>
+                    <pre>
+            <code>
+    const dog = {          //The object
+        race: 'Shiba Inu', //The key 'race', which stores the string value: 'Shiba Inu'
+        age: 8,            //The key 'age', which stores the number: 8
+        colour: 'brown'    // -||- 
+    }
+    console.log(dog.race)  //logs the dog's race
+    console.log(dog)       //logs all info about the dog
+
+    or 
+
+    console.log(dog['race']);
+    console.log(dog['colour']);
+        </code>
+                    </pre> 
+    
+    
+            <p>As seen in the example above, one of the ways to extract methods or properties from an object is to use the dot notations.<br>
+            The other way is to use bracket notation, which is also presented in the example.</p>
+    
+            <p>Objects are not only limited to storing primitive data types. They can also have functions as values. <br>
+            Here is an example:</p>
+                <pre>
+            <code>
+    const person = {          
+        name: 'Gabriel', 
+        phoneNumber: '12345678', 
+        age: 89, 
+        const: updateAge(){
+            return ++person.age; 
+        }
+    }
+
+    console.updateAge();  //runs the updateAge method within the object
+    console.log(age);    //90
+            </code>
+                </pre>
+            <p>When the updateAge funcion is called, the age will change to 90.</p>
+        
+    
+        <br><hr>
+                    
+
+              
+
+
+
+    </div>
+
+    <div id="footer-fragment"></div>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#navbar-fragment").load("../html/fragment/navbar.html");
+            $("#header-fragment").load("../html/fragment/header.html");
+            $("#footer-fragment").load("../html/fragment/footer.html");
+        });
+    </script>
+</body>
+</html>
