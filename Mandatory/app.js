@@ -30,8 +30,8 @@ app.get("/javascript", (req, res) => {
     return res.sendFile(__dirname + "../html/content/javascript.html")
 });
 
-app.get("/libraries", (req, res) => {
-    return res.sendFile(__dirname + "../html/content/libraries.html")
+app.get("/restapi", (req, res) => {
+    return res.sendFile(__dirname + "../html/content/api.html")
 });
 
 app.get("/http", (req, res) => {
