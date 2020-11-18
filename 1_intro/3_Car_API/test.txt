@@ -1,0 +1,16 @@
+///HTTP METHOD              //PATH                  //DESCRIPTION
+---------------             -------                 ---------------
+GET                         /car                    returns all the objects in the path
+POST                        /cars/car<ID>           Creates an object in the collection <cars> with a specific ID (Users hould not be able to assign ID - handled in the database)
+PUT                         /cars/car<ID>           Replaces the information / value of the given object with a specifc ID. Creates a new item if it doesn't exist.
+PATCH                       /cars/car<ID>           Updates the information / value of the given item. Creates a new item if it doesn't exist
+DELETE                      /cars/car<ID>           Deletes an item with a specific ID
+
+let cars = [
+    { id: 1, name: "Volkswagen"}
+    { id: 2, model: "Golf VII"}
+    
+    ]
+
+
+//handle id --> Not by Clients but by Server

@@ -1,0 +1,18 @@
+{
+  "name": "week39_crud_exercise",
+  "version": "1.0.0",
+  "description": "Exercise for Week 39 focusing in GET, PUT, POST & DELETE. API that handles these http verbs",
+  "main": "app.js",
+  "dependencies": {
+    "cross-env": "^7.0.2",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-dev": "cross-env PORT=8080 nodemon app.js",
+    "start-prod": "cross-env PORT=80 node app.js"
+  },
+  "author": "Tariq",
+  "license": "ISC"
+}
