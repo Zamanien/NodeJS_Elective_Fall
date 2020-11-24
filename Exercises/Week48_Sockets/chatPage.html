@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Page</title>
+</head>
+<body>
+    <h1>Chat page</h1>
+
+    <textArea id="textBox"></textArea>
+    <button type="submit" onclick="messageSubmit()" >Send</button>
+
+    <!--Importing socket library-->
+    <script src="socket.io/socket.io.js"></script>
+
+    <script>
+        //Create socket: 
+        const socket = io(); 
+
+        function messageSubmit(){
+            console.log("Message submitted");
+
+            const message = document.getElementById("textBox").value;
+            document.getElementById("textBow").value = ""; 
+
+            socket.emit("server sending message", {data: message}) {
+
+            });
+
+        }
+
+       // socket.emit();
+    </script>
+
+</body>
+</html>
