@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colour Picker</title>
+</head>
+<body>
+    <h1>Colour Picker</h1>
+
+    <!-- onchange takes functioon as parameter-->
+    <input id="colour" type="color" onchange="handleColourChange()">
+
+
+    <!-- Split into subfolders normally-->
+    <script src="socket.io/socket.io.js"></script>
+    <script>
+        //Outputs the socket instance
+        const socket = io(); 
+        //console.log(socket); 
+ 
+    
+        //function that logs everytime colour is changed
+        function handleColourChange(){
+            console.log('Changed colour'); 
+
+            //prints out colour
+            const colour = document.getElementById("colour").value;
+            console.log(colour);
+
+            //server sends some data . .on() in app.js catches the data - keyword server
+            socket.emit("client changed colour", {data: 'colour'}); 
+
+            
+
+
+        }
+
+        socket.on("server sending the colour", ({ data }) => {
+            //console.log("Sent from server: ", data);
+            document.body.style.backgroundColor = data;
+        });
+        
+    </script>
+</body>
+</html>
