@@ -24,9 +24,7 @@
             const message = document.getElementById("textBox").value;
             document.getElementById("textBow").value = ""; 
 
-            socket.emit("server sending message", {data: message}) {
-
-            });
+            socket.emit("server sending message", {data: message});
 
         }
 

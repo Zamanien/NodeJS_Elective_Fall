@@ -3,13 +3,14 @@
 // --------------------------------------
 // Exercise 1 - Console and constiables
 
-const firstName = "Anders";
-const lastName = "Latif";
+
 // EXERCISE
 // show in the console
 // My first name is Anders and my last name is Latif
+const firstName = 'Anders'
+const lastName = 'Latif'
 
-console.log('My first name is', firstName, 'and my last name is', lastName); 
+console.log(`My first name is ${firstName} and my last name is ${lastName}`)
 
 
 // --------------------------------------
@@ -22,17 +23,14 @@ const number = 1;
 // The result should be 2020
 // You cannot touch line 1 or 2
 
+const currentYear = number + parseInt(year); 
+
+console.log(currentYear)
 
 // let years = parseInt(year) + number;
 // console.log(years);
 
-const currentYear = Number(year) + number; 
-console.log(currentYear);
 
-
-const testParsing = "123abc"; 
-
-console.log(Number(testParsing));
 
 
 // --------------------------------------

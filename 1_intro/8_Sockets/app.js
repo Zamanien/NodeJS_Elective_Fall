@@ -35,6 +35,13 @@ app.get("/colourpicker", (req, res) => {
     return res.sendFile(__dirname + "/colourPicker.html");
 });
 
-server.listen(8080), (error => {
-    console.log(`Server running on port: ${port}`)
-});
+
+
+const port = process.env.PORT | 8080; 
+server.listen(port, (error) => {
+    if(error) {
+        console.log('Error', error);
+    }else{
+        console.log(`Server running on port: ${port}`);
+    }
+}); 

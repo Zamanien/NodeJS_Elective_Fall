@@ -6,6 +6,7 @@
 const myObj = {"message": "Hello, earthling! I bring peace."};
 
 // Log the message 
+
 console.log(myObj.message);
 
 // --------------------------------------
@@ -13,25 +14,28 @@ console.log(myObj.message);
 
 // Create an object that has your name and age. 
 
-const newObj = {
-    myInfo: { 
-        name: 'Tariq', 
-        age: 24
-    }
-};
+anotherObj = {
+    name: "Tariq", 
+    age: 24, 
+    gender: "male"
 
+}
 
-    console.log(newObj.myInfo);
+console.log(anotherObj);
+
 // --------------------------------------
 // Exercise 3 - Add a property 
 
 const stackOverflow = {}; 
 
-stackOverflow.isAllowed = true; 
 
 // make a rule called isAllowed and let the value be true
 
-console.log(stackOverflow.isAllowed);
+stackOverflow.isAllowed = true; 
+
+stackOverflow.test = "testing";
+console.log(stackOverflow);
+
 
 // --------------------------------------
 // Exercise 4 - Remove a property 
@@ -40,10 +44,8 @@ const thisSong = {"description": "The best song in the world."}
 
 // remove the property "description" and add a property called "about" that should say "Just a tribute." 
 
-delete thisSong.description; 
-// thisSong.about = 'Just a tribue.';
-
-thisSong = {about: 'Just a tribute.'}; 
+delete(thisSong.description);
+thisSong.about = "Just a tribute";
 
 console.log(thisSong);
 

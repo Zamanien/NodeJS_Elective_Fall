@@ -1,4 +1,9 @@
-const router = require('express').Router(); 
+const router = require('express').Router(); //imports the express router class
+
+//Alternate (unpreferred) way to write require method above 
+/*
+const express = require('express')
+const router = express.Router; 
 
 /*
 const exports = postRouter = router.post('/form', (req, res) => {
@@ -6,6 +11,7 @@ const exports = postRouter = router.post('/form', (req, res) => {
 
 });
 */
+
 
 router.post('/form', (req, res) => {
     return res.sendFile({ data: req.body }); 

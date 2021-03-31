@@ -2,6 +2,7 @@
     "dependencies": {
         "budo": "^11.6.4",
         "express": "^4.17.1",
-        "mongodbcrud": "file:6._Databases/mongodb"
+        "mongodbcrud": "file:6._Databases/mongodb",
+        "nodemon": "^2.0.7"
     }
 }

@@ -15,9 +15,9 @@ const friends = [];
 
 // What a lonely array. Add at least 3 friend objects to it.  
 
-friends.push('friend1','friend2','friend');
+friends.push(["friend1", "friend2", "friend3"]);
 
-console.log(friends);
+//console.log(friends)
 
 // --------------------------------------
 // Exercise 3 - Get the index of first occurance of that value. 
@@ -29,7 +29,6 @@ const significantMathNumbers = [0, 2.718, 3.14159, 1729];
 
 console.log(significantMathNumbers.indexOf(1729));
 
-
 // --------------------------------------
 // Exercise 4 - Inserting elements
 
@@ -37,10 +36,10 @@ const diet = ["tomato", "cucumber", "rocket"];
 
 // You are a programmer. In one line (one statement) insert hamburger, soda and pizza between the elements cucumber and rocket
 
-diet.splice(2, 0,  'hamburger', 'soda', 'pizza');
+
+diet.splice(2, 0, 'hamburger', 'soda', 'pizza');
 
 console.log(diet);
-
 
 // --------------------------------------
 // Exercise 5 - Remove element
@@ -48,20 +47,17 @@ console.log(diet);
 // Remove the LAST element of the array.
 // Don't remove by index. You know in advance that it's the last in the array because you are too full already. 
 
+diet.pop()
+//console.log(diet)
 
-
-diet.pop(); 
-
-console.log(diet);
 // --------------------------------------
 // Exercise 6 - Copy array
 
 // You really like your daily diet from last exercise. Copy it to a new array called dinnerTray so you can give it to a friend.  
 
-const newDiet = diet.slice(); 
+dinnerTray = diet;
 
-console.log(newDiet);
-
+console.log(dinnerTray);
 // --------------------------------------
 // Exercise 7 - For loop
 
@@ -69,9 +65,10 @@ const letter = ["a","b","c", "d", "e", "f", "g", "h"];
 
 // log every second char in the array starting from b
 
-for (let i = 1; i < letter.length; i=i+2){
-    console.log(letter[i]);
+for(i = 1; i < letter.length; i++){
+    console.log(letter[i++]);
 }
+
 
 
 // --------------------------------------
@@ -80,24 +77,48 @@ for (let i = 1; i < letter.length; i=i+2){
 const numbers  = [5, 3, 2, 7, 11, 12, 0, -20, 6];
 const discardedNumbers = [];
 
-for (let j = 0; j < numbers.length; j++){
-    
-    if(numbers[j] < 0 || numbers[j] > 6) {
-        console.log(numbers[j]);
-    }
-
-    else{
-        discardedNumbers.push(numbers[j]);
-    }
-
-}
-console.log(discardedNumbers);  
-
-
 
 // log the element if the number is above 6 or below 0
 // else push them to the array discardedNumbers
 
+
+for(let i = 0; i < numbers.length; i++){
+    if(numbers[i] > 6 || numbers[i] <= 0){
+        console.log('Non-discarded: ', numbers[i])
+    } else {
+        discardedNumbers.push(numbers[i]);
+        console.log('Discarded: ', discardedNumbers);
+    }
+}
+
+
+
+
 // --------------------------------------
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+for(i = 0; i < numbers.length; i++){
+
+    if(numbers[i] <= 0 || numbers[i] > 6){
+        console.log('non-discarded: ', numbers[i]);
+    } else {
+        discardedNumbers.push(numbers[i])
+        console.log('discarded: ', discardedNumbers)
+    }
+    
+}
+*/

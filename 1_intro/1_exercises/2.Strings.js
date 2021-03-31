@@ -7,11 +7,11 @@ const numberTwo = "2.30";
 // add those two numbers and show the result
 // you cannot touch line 1 neither line 2
 
-const numberOne1 = parseFloat(numberOne); 
-const numberTwo2 = parseFloat(numberTwo);
+const numberOnetoFloat = parseFloat(numberOne); 
+const numberTwotoFloat = parseFloat(numberTwo); 
 
+console.log(numberOnetoFloat + '\n' + numberTwotoFloat);
 
-console.log(numberOne1, numberTwo2);
 
 // --------------------------------------
 
@@ -22,16 +22,14 @@ console.log(numberOne1, numberTwo2);
 const anotherNumberOne = "1.10";
 const anotherNumberTwo = "2.30";
 
-// const anotherNumberOneFloat = parseFloat(anotherNumberOne); 
-// const anotherNumberTwoFloat = parseFloat(anotherNumberTwo); 
+const fixedFloatOne = parseFloat(anotherNumberOne).toFixed(2);
+const fixedFloatTwo = parseFloat(anotherNumberTwo).toFixed(2); 
 
-const result = (Number(anotherNumberOne) + Number(anotherNumberTwo)).toFixed(2);
-
-// const result = (anotherNumberOneFloat + anotherNumberTwoFloat).toFixed(2);
+console.log(fixedFloatOne + '\n' + fixedFloatTwo);
 
 
 
-console.log(result);
+
 
 
 // --------------------------------------
@@ -43,11 +41,10 @@ const three = 98;
 
 // Show in the console the avg. with 5 decimals
 
-const resultAverage = ((one + two + three) / 3).toFixed(5); 
-
-console.log(resultAverage); 
 
 
+const averageOut = parseFloat((one + two + three) / 3).toFixed(5);
+console.log(averageOut);
 
 
 
@@ -57,8 +54,8 @@ console.log(resultAverage);
 const letters = "abc";
 // Get me the character "c"
 
-console.log(letters.charAt(2));
 
+console.log(letters[2])
 
 
 
@@ -70,10 +67,9 @@ const fact = "You are learning javascript!";
 
 // capitalize the J in Javascript
 
-const replacedFact = fact.replace('j', 'J');
 
-console.log(replacedFact);
-
+const factOut = fact.replace('j', 'J')
+console.log(factOut);
 
 
 // --------------------------------------
